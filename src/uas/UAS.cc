@@ -3155,7 +3155,7 @@ void UAS::sendHilOpticalFlow(quint64 time_us, qint16 flow_x, qint16 flow_y, floa
     {
         mavlink_message_t msg;
         mavlink_msg_hil_optical_flow_pack(mavlink->getSystemId(), mavlink->getComponentId(), &msg,
-                                   time_us, 0, flow_x, flow_y, flow_comp_m_x, flow_comp_m_y, quality, ground_distance);
+                                   time_us, 0, flow_x, flow_y, flow_comp_m_x, flow_comp_m_y, quality, ground_distance,0,0,0,0.0f);
         sendMessage(msg);
         lastSendTimeOpticalFlow = QGC::groundTimeMilliseconds();
     }
